@@ -32,7 +32,7 @@ import Layout from '@/layout'
  */
 export const constantRoutes = [
   {
-    path: '/login',
+    path: '/',
     component: () => import('@/views/login/index'),
     hidden: true
   },
@@ -41,16 +41,28 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   redirect: '/group',
+  //   children: [{
+  //     path: 'group',
+  //     name: 'Group',
+  //     component: () => import('@/views/group/index'),
+  //     meta: { title: '团队数据', icon: 'dashboard' }
+  //   }]
+  // },
   {
-    path: '/',
+    path: '/group',
     component: Layout,
-    redirect: '/group',
-    children: [{
+
+         children: [{
       path: 'group',
       name: 'Group',
       component: () => import('@/views/group/index'),
       meta: { title: '团队数据', icon: 'dashboard' }
-    }]
+    }],
+    hidden: true
   },
   {
     path: '/user',
@@ -69,30 +81,30 @@ export const constantRoutes = [
     //   component: () => import('@/views/user/partner/index'),
     //   meta: { title: '合伙人管理', icon: 'el-icon-s-check' }
     // }
-    {
-      path: '/userassets',
-      name: 'Userassets',
-      component: () => import('@/views/user/user_assets/index'),
-      meta: { title: '用户资产', icon: 'el-icon-coin' }
-    },
-    {
-      path: '/usertree',
-      name: 'Usertree',
-      component: () => import('@/views/user/user_tree/index'),
-      meta: { title: '用户层级关系', icon: 'el-icon-s-unfold' }
-    },
-    {
-      path: '/tree',
-      name: 'Tree',
-      component: () => import('@/views/user/tree/index'),
-      meta: { title: '用户层级树', icon: 'el-icon-s-operation' }
-    },
-    {
-      path: '/realname',
-      name: 'realname',
-      component: () => import('@/views/user/realname/index'),
-      meta: { title: '实名审核', icon: 'el-icon-s-check' }
-    },
+    // {
+    //   path: '/userassets',
+    //   name: 'Userassets',
+    //   component: () => import('@/views/user/user_assets/index'),
+    //   meta: { title: '用户资产', icon: 'el-icon-coin' }
+    // },
+    // {
+    //   path: '/usertree',
+    //   name: 'Usertree',
+    //   component: () => import('@/views/user/user_tree/index'),
+    //   meta: { title: '用户层级关系', icon: 'el-icon-s-unfold' }
+    // },
+    // {
+    //   path: '/tree',
+    //   name: 'Tree',
+    //   component: () => import('@/views/user/tree/index'),
+    //   meta: { title: '用户层级树', icon: 'el-icon-s-operation' }
+    // },
+    // {
+    //   path: '/realname',
+    //   name: 'realname',
+    //   component: () => import('@/views/user/realname/index'),
+    //   meta: { title: '实名审核', icon: 'el-icon-s-check' }
+    // },
     ]
   },
 
@@ -116,90 +128,90 @@ export const constantRoutes = [
     ]
   },
 
-  {
-    path: '/commission',
-    component: Layout,
-    redirect: '/commission',
-    meta: { title: '佣金管理', icon: 'el-icon-s-management' },
-    children: [{
-      path: 'broker',
-      name: 'Broker',
-      component: () => import('@/views/commission/broker_list/index'),
-      meta: { title: '佣金明细', icon: 'el-icon-money' }
-    },
-    {
-      path: 'all_broker',
-      name: 'AllBroker',
-      component: () => import('@/views/commission/all_broker/index'),
-      meta: { title: '返佣汇总', icon: 'el-icon-money' }
-    },
-    {
-      path: 'yes_broker',
-      name: 'YesBroker',
-      component: () => import('@/views/commission/yesterday_broker/index'),
-      meta: { title: '昨日返佣', icon: 'el-icon-s-marketing' }
-    },
-    ]
-  },
+  // {
+  //   path: '/commission',
+  //   component: Layout,
+  //   redirect: '/commission',
+  //   meta: { title: '佣金管理', icon: 'el-icon-s-management' },
+  //   children: [{
+  //     path: 'broker',
+  //     name: 'Broker',
+  //     component: () => import('@/views/commission/broker_list/index'),
+  //     meta: { title: '佣金明细', icon: 'el-icon-money' }
+  //   },
+  //   {
+  //     path: 'all_broker',
+  //     name: 'AllBroker',
+  //     component: () => import('@/views/commission/all_broker/index'),
+  //     meta: { title: '返佣汇总', icon: 'el-icon-money' }
+  //   },
+  //   {
+  //     path: 'yes_broker',
+  //     name: 'YesBroker',
+  //     component: () => import('@/views/commission/yesterday_broker/index'),
+  //     meta: { title: '昨日返佣', icon: 'el-icon-s-marketing' }
+  //   },
+  //   ]
+  // },
   
-  {
-    path: '/contract',
-    component: Layout,
-    redirect: '/chicang',
-    meta: {
-      title: '合约系统', icon: 'el-icon-folder-opened'
-    },
-    children: [
+  // {
+  //   path: '/contract',
+  //   component: Layout,
+  //   redirect: '/chicang',
+  //   meta: {
+  //     title: '合约系统', icon: 'el-icon-folder-opened'
+  //   },
+  //   children: [
       
-      {
-        path: '/chicang',
-        name: 'Chicang',
-        component: () => import('@/views/contract/chicang/index'),
-        meta: { title: '当前持仓', icon: 'el-icon-document-checked' }
-      }, {
-        path: '/entrust',
-        name: 'Entrust',
-        component: () => import('@/views/contract/entrust/index'),
-        meta: { title: '当前委托', icon: 'el-icon-tickets' }
-      }, {
-        path: '/historyEntrust',
-        name: 'historyEntrust',
-        component: () => import('@/views/contract/historyEntrust/index'),
-        meta: { title: '历史委托', icon: 'el-icon-document' }
-      }, {
-        path: '/history',
-        name: 'History',
-        component: () => import('@/views/contract/history/index'),
-        meta: { title: '历史记录', icon: 'el-icon-document' }
-      },{
-        path: '/leverage',
-        name: 'Leverage',
-        component: () => import('@/views/contract/leverage/index'),
-        meta: { title: '杠杆配置', icon: 'el-icon-notebook-2' }
-      },{
-        path: '/transactionpairs',
-        name: 'Transactionpairs',
-        component: () => import('@/views/contract/transactionpairs/index'),
-        meta: { title: '合约交易对配置', icon: 'el-icon-notebook-2' }
-      },{
-        path: '/parameter',
-        name: 'Parameter',
-        component: () => import('@/views/contract/parameter/index'),
-        meta: { title: '参数配置', icon: 'el-icon-notebook-2' }
-      },
-      {
-        path: '/robot',
-        name: 'Robot',
-        component: () => import('@/views/contract/robot/index'),
-        meta: { title: '机器人配置', icon: 'el-icon-s-operation' }
-      },
-      {
-        path: '/step_slippage',
-        name: 'StepSlippage',
-        component: () => import('@/views/contract/step_slippage/index'),
-        meta: { title: '阶梯滑点', icon: 'el-icon-s-operation' }
-      },]
-  },
+  //     {
+  //       path: '/chicang',
+  //       name: 'Chicang',
+  //       component: () => import('@/views/contract/chicang/index'),
+  //       meta: { title: '当前持仓', icon: 'el-icon-document-checked' }
+  //     }, {
+  //       path: '/entrust',
+  //       name: 'Entrust',
+  //       component: () => import('@/views/contract/entrust/index'),
+  //       meta: { title: '当前委托', icon: 'el-icon-tickets' }
+  //     }, {
+  //       path: '/historyEntrust',
+  //       name: 'historyEntrust',
+  //       component: () => import('@/views/contract/historyEntrust/index'),
+  //       meta: { title: '历史委托', icon: 'el-icon-document' }
+  //     }, {
+  //       path: '/history',
+  //       name: 'History',
+  //       component: () => import('@/views/contract/history/index'),
+  //       meta: { title: '历史记录', icon: 'el-icon-document' }
+  //     },{
+  //       path: '/leverage',
+  //       name: 'Leverage',
+  //       component: () => import('@/views/contract/leverage/index'),
+  //       meta: { title: '杠杆配置', icon: 'el-icon-notebook-2' }
+  //     },{
+  //       path: '/transactionpairs',
+  //       name: 'Transactionpairs',
+  //       component: () => import('@/views/contract/transactionpairs/index'),
+  //       meta: { title: '合约交易对配置', icon: 'el-icon-notebook-2' }
+  //     },{
+  //       path: '/parameter',
+  //       name: 'Parameter',
+  //       component: () => import('@/views/contract/parameter/index'),
+  //       meta: { title: '参数配置', icon: 'el-icon-notebook-2' }
+  //     },
+  //     {
+  //       path: '/robot',
+  //       name: 'Robot',
+  //       component: () => import('@/views/contract/robot/index'),
+  //       meta: { title: '机器人配置', icon: 'el-icon-s-operation' }
+  //     },
+  //     {
+  //       path: '/step_slippage',
+  //       name: 'StepSlippage',
+  //       component: () => import('@/views/contract/step_slippage/index'),
+  //       meta: { title: '阶梯滑点', icon: 'el-icon-s-operation' }
+  //     },]
+  // },
   {
     path: '/fnancialmanagement',
     component: Layout,
@@ -255,33 +267,33 @@ export const constantRoutes = [
   //       meta: { title: '交易员收益', icon: 'el-icon-document' }
   //     }]
   // },
-  {
-    path: '/pin',
-    component: Layout,
-    redirect: '/pin',
-    meta: {
-      title: '插针管理', icon: 'el-icon-folder'
-    },
-    children: [
-      {
-        path: '/pin',
-        name: 'pin',
-        component: () => import('@/views/pin-management/index'),
-        meta: { title: '插针管理', icon: 'el-icon-user' }
-      },
-      ]
-  },
-  {
-    path: '/option',
-    component: Layout,
-    redirect: '/option',
-    children: [{
-      path: 'option',
-      name: 'option',
-      component: () => import('@/views/option/index'),
-      meta: { title: '期权交易', icon: 'el-icon-s-marketing' }
-    }]
-  },
+  // {
+  //   path: '/pin',
+  //   component: Layout,
+  //   redirect: '/pin',
+  //   meta: {
+  //     title: '插针管理', icon: 'el-icon-folder'
+  //   },
+  //   children: [
+  //     {
+  //       path: '/pin',
+  //       name: 'pin',
+  //       component: () => import('@/views/pin-management/index'),
+  //       meta: { title: '插针管理', icon: 'el-icon-user' }
+  //     },
+  //     ]
+  // },
+  // {
+  //   path: '/option',
+  //   component: Layout,
+  //   redirect: '/option',
+  //   children: [{
+  //     path: 'option',
+  //     name: 'option',
+  //     component: () => import('@/views/option/index'),
+  //     meta: { title: '期权交易', icon: 'el-icon-s-marketing' }
+  //   }]
+  // },
   {
     path: '/legalcurrency',
     component: Layout,

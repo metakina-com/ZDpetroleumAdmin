@@ -27,17 +27,17 @@
       </el-col>
     </el-row>
     <div class="filter-container" style="padding-bottom: 30px">
-      <span class="demonstration" style="margin: 0px 10px 0px 10px">邮箱</span>
-      <el-input placeholder="邮箱" v-model.trim="listQuery.mail" style="width: 200px" class="filter-item" />
+      <span class="demonstration" style="margin: 0px 10px 0px 10px">钱包地址</span>
+      <el-input placeholder="钱包地址" v-model.trim="listQuery.mail" style="width: 200px; margin-right: 10px;" class="filter-item" />
       <!-- 二改新增 -->
-     <el-select v-model="listQuery.biaoji" placeholder="请选择">
+     <!-- <el-select v-model="listQuery.biaoji" placeholder="请选择">
         <el-option
           v-for="item in options"
           :key="item.value"
           :label="item.label"
           :value="item.value">
         </el-option>
-      </el-select>
+      </el-select> -->
       <!-- <el-button class="filter-item" type="primary" icon="el-icon-search" @click="shaixuan">筛选</el-button> -->
 
 
@@ -50,38 +50,16 @@
       </el-table-column>
       <!-- <el-table-column prop="uuid" label="用户ID" min-width="70" align="center">
       </el-table-column> -->
-      <el-table-column prop="mail" label="邮箱" min-width="70" align="center"></el-table-column>
+      <el-table-column prop="mail" label="钱包地址" min-width="70" align="center"></el-table-column>
       <el-table-column prop="uname" label="姓名" min-width="70" align="center"></el-table-column>
-      <el-table-column prop="cardNo" label="证件号码" min-width="70" align="center"></el-table-column>
-      <el-table-column prop="isAdmin" label="合伙人" min-width="70" align="center">
-        <template slot-scope="row">
-          <p v-if="row.row.isAdmin == 'TRUE'">是</p>
-          <p v-else>否</p>
-        </template>
+    
+      <el-table-column prop="welMember" label="状态" min-width="70" align="center">
       </el-table-column>
-      <el-table-column prop="welMember" label="邀请人" min-width="70" align="center">
-      </el-table-column>
-     
-      <el-table-column prop="power" label="返金比例" min-width="70" align="center">
-      </el-table-column>
-      <el-table-column prop="openDownHd" label="开空滑点" min-width="70" align="center">
-      </el-table-column>
-      <el-table-column prop="openUpHd" label="开多滑点" min-width="70" align="center">
-      </el-table-column>
-      <el-table-column prop="closeDownHd" label="平空滑点" min-width="70" align="center">
-      </el-table-column>
-      <el-table-column prop="closeUpHd" label="平多滑点" min-width="70" align="center">
-      </el-table-column>
-      <el-table-column prop="takeFee" label="开仓手续费" min-width="70" align="center">
-      </el-table-column>
-      <el-table-column prop="makerFee" label="平仓手续费" min-width="70" align="center">
-      </el-table-column>
-      <el-table-column prop="biaoji" label="标记" min-width="70" align="center">
-      </el-table-column>
-
 
       <el-table-column prop="createTime" label="注册时间" min-width="70" align="center" show-overflow-tooltip>
       </el-table-column>
+      <el-table-column prop="uname" label="钱包余额" min-width="70" align="center"></el-table-column>
+
       <el-table-column label="操作" align="center" min-width="180" class-name="small-padding fixed-width">
         <template slot-scope="row">
           <el-button v-if="row.row.isAdmin == 'TRUE'" size="mini" type="info" @click="submit(row,'')">

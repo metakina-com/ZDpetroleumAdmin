@@ -9,7 +9,7 @@
       label-position="left"
     >
       <div class="title-container">
-        <h3 class="title">BitBANK-管理后台</h3>
+        <h3 class="title">MO-管理后台</h3>
       </div>
       <el-form-item prop="name">
         <span class="svg-container">
@@ -95,8 +95,8 @@ export default {
     };
     return {
       loginForm: {
-        name: "",
-        password: "",
+        name: "MoAdmin",
+        password: "123456789",
       },
       loginRules: {
         name: [
@@ -195,18 +195,27 @@ export default {
           }
 
           this.loading = true;
-          this.$store
-            .dispatch("user/login", this.loginForm)
-            .then(() => {
-              this.$router.push({
-                path: this.redirect || "/",
-                query: this.otherQuery,
-              });
-              this.loading = false;
-            })
-            .catch(() => {
-              this.loading = false;
+          setTimeout(() => {
+            this.$router.push({
+              path:  "/group",
             });
+            this.$message({
+              message: "登录成功",
+              type: "success",
+            });
+          }, 2000);
+          // this.$store
+          //   .dispatch("user/login", this.loginForm)
+          //   .then(() => {
+          //     this.$router.push({
+          //       path: this.redirect || "/",
+          //       query: this.otherQuery,
+          //     });
+          //     this.loading = false;
+          //   })
+          //   .catch(() => {
+          //     this.loading = false;
+          //   });
 
           // return;
           // this.$post1("/admin/adminSms/adminLogin", this.loginForm).then(

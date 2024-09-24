@@ -8,7 +8,7 @@
       label-position="left"
     >
       <div class="title-container">
-        <h3 class="title">BitBANK-管理后台</h3>
+        <h3 class="title">MO-管理后台</h3>
       </div>
 
 
