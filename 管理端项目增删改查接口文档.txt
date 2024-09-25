@@ -1,0 +1,136 @@
+新增项目
+http://192.168.1.28:8760/moproject/project/saveProject
+请求体：
+{
+  "projectName": "DOD石油项目1",
+  "projectFrom": "0",
+  "projectUnit": "1",
+  "projectStatus": "0",
+  "isShow": "1",
+  "projectType": "0",
+  "totalYield": null,
+  "totalExchangeCount": null,
+  "totalCount": null,
+  "buyCount": null,
+  "buyPeople": null,
+  "projectInformation":"这是一个测试项目"
+}
+
+响应体：
+{
+	"data": null,
+	"errorCode": "",
+	"errorMessage": "",
+	"extMessage": "",
+	"result": "新增项目成功！",
+	"status": "SUCCEED"
+}
+
+
+修改
+http://192.168.1.28:8760/moproject/project/updateProjectDto
+请求体：
+{
+  "projectId":"1",
+  "projectName": "DOB石油项目1",
+  "projectFrom": "0",
+  "projectUnit": "1",
+  "projectStatus": "0",
+  "isShow": "1",
+  "projectType": "0",
+  "totalYield": null,
+  "totalExchangeCount": null,
+  "totalCount": null,
+  "buyCount": null,
+  "buyPeople": null,
+  "projectInformation":"这是一个测试项目修改"
+}
+响应体：
+{
+	"data": null,
+	"errorCode": "",
+	"errorMessage": "",
+	"extMessage": "",
+	"result": "修改项目成功！",
+	"status": "SUCCEED"
+}
+
+删除
+http://192.168.1.28:8760/moproject/project/deleteProject?projectId=1
+响应体：
+{
+	"data": null,
+	"errorCode": "",
+	"errorMessage": "",
+	"extMessage": "",
+	"result": "删除项目成功！",
+	"status": "SUCCEED"
+}
+查询
+http://192.168.1.28:8760/moproject/project/queryProject?projectName=DOA
+响应体：{
+	"data": null,
+	"errorCode": "",
+	"errorMessage": "",
+	"extMessage": "",
+	"result": {
+		"current": 1,
+		"pages": 1,
+		"records": [
+			{
+				"buyCount": 1360,
+				"buyPeople": 8,
+				"createBy": "admin",
+				"createTime": 1726807357000,
+				"dailyEarning": 0.04851815,
+				"id": "1",
+				"isShow": 1,
+				"personBuyAmount": 0,
+				"personBuyCount": 0,
+				"personTotalInterest": 0,
+				"projectFrom": 0,
+				"projectInformation": "",
+				"projectName": "DOA1号项目",
+				"projectStatus": 1,
+				"projectType": 0,
+				"projectUnit": "1",
+				"publishTime": 1726807355000,
+				"totalCount": 100000,
+				"totalExchangeCount": 1360,
+				"totalYield": 200,
+				"updateBy": "",
+				"updateTime": null,
+				"yesterdayEarning": 0
+			},
+			{
+				"buyCount": 480,
+				"buyPeople": 1,
+				"createBy": "admin",
+				"createTime": 1726993138000,
+				"dailyEarning": 0.04134493,
+				"id": "2",
+				"isShow": 1,
+				"personBuyAmount": 0,
+				"personBuyCount": 0,
+				"personTotalInterest": 0,
+				"projectFrom": 0,
+				"projectInformation": "",
+				"projectName": "DOA2号项目",
+				"projectStatus": 1,
+				"projectType": 0,
+				"projectUnit": "1",
+				"publishTime": 1726993133000,
+				"totalCount": 2000,
+				"totalExchangeCount": 480,
+				"totalYield": 300,
+				"updateBy": "",
+				"updateTime": null,
+				"yesterdayEarning": 0
+			}
+		],
+		"searchCount": true,
+		"size": 10,
+		"total": 2
+	},
+	"status": "SUCCEED"
+}
