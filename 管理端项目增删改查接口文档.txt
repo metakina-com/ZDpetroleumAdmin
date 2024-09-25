@@ -15,7 +15,6 @@ http://192.168.1.28:8760/moproject/project/saveProject
   "buyPeople": null,
   "projectInformation":"这是一个测试项目"
 }
-
 响应体：
 {
 	"data": null,
@@ -25,6 +24,7 @@ http://192.168.1.28:8760/moproject/project/saveProject
 	"result": "新增项目成功！",
 	"status": "SUCCEED"
 }
+
 
 
 修改
@@ -55,6 +55,8 @@ http://192.168.1.28:8760/moproject/project/updateProjectDto
 	"status": "SUCCEED"
 }
 
+
+
 删除
 http://192.168.1.28:8760/moproject/project/deleteProject?projectId=1
 响应体：
@@ -66,6 +68,9 @@ http://192.168.1.28:8760/moproject/project/deleteProject?projectId=1
 	"result": "删除项目成功！",
 	"status": "SUCCEED"
 }
+
+
+
 查询
 http://192.168.1.28:8760/moproject/project/queryProject?projectName=DOA
 响应体：{

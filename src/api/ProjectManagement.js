@@ -1,8 +1,8 @@
 import request from "@/utils/request";
 
-export function getList(params) {
+export function getListData(params) {
   return request({
-    url: "/vue-admin-template/table/list",
+    url: "/moproject/project/queryProject",
     method: "get",
     params,
   });
